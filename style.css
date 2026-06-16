@@ -1,12 +1,13 @@
-/* Variables y Reset */
+/* Variables y Reset - Enfoque Tech & Yellow */
 :root {
-    --primary: #009ee3; /* Azul estilo Mercado Pago */
-    --primary-dark: #007ebd;
-    --secondary: #1e293b;
-    --success: #00a650;
-    --bg-light: #f5f6f8;
-    --text-dark: #333333;
-    --text-muted: #666666;
+    --primary: #FFE600; /* Amarillo vibrante estilo ML */
+    --primary-dark: #E5CF00; /* Amarillo ligeramente oscurecido para hovers */
+    --primary-text: #0F172A; /* Slate muy oscuro para contraste sobre amarillo */
+    --secondary: #0F172A; /* Azul oscuro/negro tech para secciones y textos fuertes */
+    --success: #00A650; /* Verde financiero para precios */
+    --bg-light: #F8FAFC; /* Gris tech ultra claro para el fondo */
+    --text-dark: #334155; /* Gris oscuro para lectura cómoda */
+    --text-muted: #64748B; /* Gris medio para textos secundarios */
     --white: #ffffff;
 }
 
@@ -21,6 +22,7 @@ body {
     background-color: var(--bg-light);
     color: var(--text-dark);
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
 .container {
@@ -29,73 +31,87 @@ body {
     padding: 0 1.5rem;
 }
 
-/* Botones Globales */
+/* Botones Globales Tech */
 .btn {
     display: inline-block;
-    padding: 0.8rem 1.5rem;
-    border-radius: 6px;
-    font-weight: 600;
+    padding: 0.9rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 700;
     text-decoration: none;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+    font-size: 1.05rem;
 }
 
 .btn-primary {
     background-color: var(--primary);
-    color: var(--white);
+    color: var(--primary-text);
     border: 2px solid var(--primary);
+    box-shadow: 0 4px 6px rgba(255, 230, 0, 0.2);
 }
 
 .btn-primary:hover {
     background-color: var(--primary-dark);
     border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 230, 0, 0.3);
 }
 
 .btn-outline {
     background-color: transparent;
-    color: var(--white);
-    border: 2px solid var(--white);
+    color: var(--primary-text);
+    border: 2px solid var(--primary-text);
 }
 
 .btn-outline:hover {
-    background-color: var(--white);
+    background-color: var(--primary-text);
     color: var(--primary);
 }
 
-/* Hero Section (Cabecera) */
+/* Hero Section (Cabecera Amarilla de Alto Impacto) */
 .hero-section {
-    background: linear-gradient(135deg, #005c9a, #009ee3);
-    color: var(--white);
+    background: linear-gradient(135deg, #FFE600 0%, #FFD100 100%);
+    color: var(--primary-text);
     padding: 6rem 0;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-content {
     max-width: 800px;
+    position: relative;
+    z-index: 2;
 }
 
 .badge {
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 0.5rem 1rem;
+    background-color: rgba(15, 23, 42, 0.08);
+    color: var(--primary-text);
+    padding: 0.5rem 1.2rem;
     border-radius: 50px;
     font-size: 0.9rem;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 1.5rem;
     display: inline-block;
+    border: 1px solid rgba(15, 23, 42, 0.1);
 }
 
 .hero-section h1 {
-    font-size: 3rem;
+    font-size: 3.2rem;
     line-height: 1.2;
     margin-bottom: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
 }
 
 .hero-section p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
     opacity: 0.9;
+    font-weight: 500;
 }
 
 .hero-buttons {
@@ -107,171 +123,200 @@ body {
 
 /* Sección de Beneficios */
 .benefits-section {
-    padding: 4rem 0;
+    padding: 5rem 0;
     background-color: var(--white);
+    border-bottom: 1px solid #E2E8F0;
 }
 
 .benefits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    gap: 3rem;
     text-align: center;
 }
 
 .benefit-card .icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    margin-bottom: 1.2rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover .icon {
+    transform: scale(1.1);
 }
 
 .benefit-card h3 {
     color: var(--secondary);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.4rem;
 }
 
 .benefit-card p {
     color: var(--text-muted);
+    font-size: 1.05rem;
 }
 
 /* Sección del Catálogo */
 .catalog-section {
-    padding: 5rem 0;
+    padding: 6rem 0;
 }
 
 .section-title {
     text-align: center;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     color: var(--secondary);
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
 
 .terminals-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
 }
 
 .terminal-card {
     background: var(--white);
-    border-radius: 12px;
-    padding: 2rem;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02), 0 10px 15px rgba(0,0,0,0.04);
     position: relative;
-    transition: transform 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
+    border: 1px solid #E2E8F0;
 }
 
 .terminal-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.08), 0 20px 25px rgba(0,0,0,0.05);
+    border-color: #CBD5E1;
 }
 
 .terminal-card.popular {
-    border: 2px solid var(--primary);
+    border: 3px solid var(--primary);
 }
 
 .tag-popular {
     position: absolute;
-    top: -12px;
+    top: -16px;
     left: 50%;
     transform: translateX(-50%);
     background: var(--primary);
-    color: var(--white);
-    padding: 4px 15px;
+    color: var(--primary-text);
+    padding: 6px 20px;
     border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: bold;
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(255, 230, 0, 0.2);
 }
 
 .terminal-card img {
-    height: 180px;
+    height: 200px;
     object-fit: contain;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    mix-blend-mode: multiply;
 }
 
 .terminal-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem;
+    color: var(--secondary);
+    font-weight: 700;
 }
 
 .terminal-card p {
     color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
     flex-grow: 1;
 }
 
 .price {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1rem 0;
+    border-top: 1px dashed #E2E8F0;
+    border-bottom: 1px dashed #E2E8F0;
 }
 
 .original-price {
     display: block;
     text-decoration: line-through;
-    color: #999;
-    font-size: 1rem;
+    color: #94A3B8;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
 }
 
 .discount-price {
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 2.5rem;
+    font-weight: 800;
     color: var(--success);
+    line-height: 1;
 }
 
 .discount-price span {
-    font-size: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .btn-buy {
-    background-color: var(--primary);
-    color: var(--white);
     width: 100%;
 }
 
-.btn-buy:hover {
-    background-color: var(--primary-dark);
-}
-
-/* Footer / CTA */
+/* Footer / CTA Tech */
 .site-footer {
     background-color: var(--secondary);
     color: var(--white);
     text-align: center;
-    padding: 4rem 0 2rem 0;
+    padding: 5rem 0 3rem 0;
+    border-top: 5px solid var(--primary);
 }
 
 .site-footer h2 {
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
 }
 
 .site-footer p {
-    margin-bottom: 2rem;
-    opacity: 0.8;
+    font-size: 1.1rem;
+    color: #CBD5E1;
+    margin-bottom: 2.5rem;
 }
 
 .btn-whatsapp {
-    background-color: #25D366; /* Color oficial WhatsApp */
+    background-color: #25D366;
     color: var(--white);
     font-size: 1.1rem;
-    padding: 1rem 2rem;
-    margin-bottom: 3rem;
+    padding: 1rem 2.5rem;
+    margin-bottom: 4rem;
+    border: none;
+    border-radius: 8px;
 }
 
 .btn-whatsapp:hover {
-    background-color: #128C7E;
+    background-color: #1DA851;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(37, 211, 102, 0.3);
 }
 
 .copyright {
     border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 1.5rem;
-    font-size: 0.85rem;
-    opacity: 0.6;
+    padding-top: 2rem;
+    font-size: 0.9rem;
+    color: #94A3B8;
 }
 
 /* Responsivo para móviles */
 @media (max-width: 768px) {
-    .hero-section h1 { font-size: 2.2rem; }
-    .hero-buttons { flex-direction: column; }
+    .hero-section { padding: 4rem 0; }
+    .hero-section h1 { font-size: 2.4rem; }
+    .hero-buttons { flex-direction: column; width: 100%; padding: 0 1rem; }
     .btn { width: 100%; }
+    .section-title { font-size: 2rem; }
+    .terminal-card { padding: 2rem 1.5rem; }
 }
