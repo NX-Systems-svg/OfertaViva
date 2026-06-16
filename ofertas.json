@@ -3,32 +3,32 @@
     "id": 1,
     "titulo": "Raspberry Pi 5 (8GB RAM)",
     "descripcion": "El microordenador definitivo. Crea tu propio servidor casero, bloqueador de anuncios (Pi-hole) o consola retro.",
-    "imagen": "https://m.media-amazon.com/images/I/611jE-pUqTL._AC_SL1500_.jpg",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_727402-MLM46231901046_062021-O.webp",
     "precio": "$1,850",
-    "enlace": "AQUI_TU_LINK_DE_WHATSAPP_O_COMPRA"
+    "enlace": "AQUI_TU_LINK_DE_COMPRA_1"
   },
   {
     "id": 2,
     "titulo": "Teclado Mecánico Custom 65%",
     "descripcion": "Switches Gateron Yellow lineales, teclas PBT de doble inyección y RGB personalizable. El sonido perfecto al programar.",
-    "imagen": "https://m.media-amazon.com/images/I/61bC1t3z4cL._AC_SL1500_.jpg",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_908869-MLM52131920728_102022-O.webp",
     "precio": "$1,299",
-    "enlace": "AQUI_TU_LINK_DE_WHATSAPP_O_COMPRA"
+    "enlace": "AQUI_TU_LINK_DE_COMPRA_2"
   },
   {
     "id": 3,
     "titulo": "Monitor UltraWide 34\" 144Hz",
     "descripcion": "Expande tu entorno de desarrollo. Divide tu pantalla para código, terminal y navegador sin perder detalle.",
-    "imagen": "https://m.media-amazon.com/images/I/71I2b200w0L._AC_SL1500_.jpg",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_912806-MLM44026368819_112020-O.webp",
     "precio": "$7,499",
-    "enlace": "AQUI_TU_LINK_DE_WHATSAPP_O_COMPRA"
+    "enlace": "AQUI_TU_LINK_DE_COMPRA_3"
   },
   {
     "id": 4,
     "titulo": "Kit de Robótica Arduino Mega",
     "descripcion": "Electrónica DIY pura. Incluye más de 200 componentes, sensores y motores para automatizar tu habitación.",
-    "imagen": "https://m.media-amazon.com/images/I/815z4f8vHJL._AC_SL1500_.jpg",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_830154-MLM31233077363_062019-O.webp",
     "precio": "$850",
-    "enlace": "AQUI_TU_LINK_DE_WHATSAPP_O_COMPRA"
+    "enlace": "AQUI_TU_LINK_DE_COMPRA_4"
   }
 ]
