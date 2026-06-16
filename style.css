@@ -1,228 +1,173 @@
-/* Variables de Diseño Globales */
+/* Importar fuente con estilo tecnológico y de código */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@300;400;700&display=swap');
+
 :root {
-    --primary-color: #0d6efd;
-    --primary-dark: #0a58ca;
-    --success-color: #198754;
-    --success-dark: #146c43;
-    --text-main: #212529;
-    --text-muted: #6c757d;
-    --bg-light: #f8f9fa;
-    --bg-card: #ffffff;
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.08);
-    --radius: 12px;
+    --bg-dark: #0a0e17;
+    --bg-card: #121826;
+    --neon-cyan: #00f0ff;
+    --neon-purple: #7000ff;
+    --text-main: #e2e8f0;
+    --text-muted: #8b9bb4;
+    --border-color: #1e293b;
 }
 
-/* Reset Profesional */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 body {
-    background-color: var(--bg-light);
+    background-color: var(--bg-dark);
     color: var(--text-main);
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
+    font-family: 'Inter', sans-serif;
+    background-image: radial-gradient(circle at top right, #121826, #0a0e17);
+    min-height: 100vh;
 }
 
-/* Header Estilo Tecnológico */
-.main-header {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: white;
-    padding: 4.5rem 1.5rem;
+/* Header Cyberpunk */
+.cyber-header {
+    padding: 4rem 2rem;
     text-align: center;
-    position: relative;
+    border-bottom: 1px solid var(--border-color);
+    background: rgba(10, 14, 23, 0.8);
+    backdrop-filter: blur(10px);
 }
 
-.header-container {
-    max-width: 800px;
+.cyber-header h1 {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 3rem;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+    margin-bottom: 0.5rem;
+}
+
+.cyber-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    max-width: 600px;
     margin: 0 auto;
 }
 
-.badge-top {
-    background-color: rgba(255, 255, 255, 0.15);
-    padding: 6px 16px;
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    display: inline-block;
-    margin-bottom: 1.2rem;
-    text-transform: uppercase;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.main-header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    margin-bottom: 0.8rem;
-}
-
-.main-header p {
-    font-size: 1.15rem;
-    color: #e2e8f0;
-    font-weight: 300;
-}
-
-/* Layout General */
-.content-wrapper {
+/* Contenedor Principal */
+.system-core {
     max-width: 1200px;
-    margin: 3.5rem auto;
+    margin: 4rem auto;
     padding: 0 1.5rem;
 }
 
-.catalog-section {
-    margin-bottom: 4.5rem;
-}
-
-.section-title-block {
-    margin-bottom: 2rem;
-    border-left: 5px solid var(--primary-color);
-    padding-left: 1rem;
-}
-
-.setup-section .section-title-block {
-    border-left-color: var(--success-color);
-}
-
-.section-title-block h2 {
-    font-size: 1.75rem;
-    color: #1e293b;
-    font-weight: 700;
-}
-
-.section-title-block p {
-    color: var(--text-muted);
-    font-size: 1rem;
-}
-
-/* Cuadrículas Inteligentes */
-.products-grid {
+.neon-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
 }
 
-/* Tarjetas de Producto Ultra-Profesionales */
-.tarjeta-producto {
+/* Tarjetas Tech */
+.tech-card {
     background-color: var(--bg-card);
-    border-radius: var(--radius);
-    border: 1px solid #e2e8f0;
-    padding: 2rem;
-    box-shadow: var(--shadow-sm);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
-.tarjeta-producto:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-md);
-    border-color: #cbd5e1;
-}
-
-/* Área de Imagen */
-.img-container {
+/* Efecto de resplandor superior en la tarjeta */
+.tech-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 180px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-cyan), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(0, 240, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 240, 255, 0.1);
+}
+
+.tech-card:hover::before {
+    opacity: 1;
+}
+
+/* Imagen del producto */
+.img-wrapper {
+    height: 200px;
+    background-color: white; /* Fondo blanco para que las imágenes destaquen */
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.5rem;
-    mix-blend-mode: multiply;
 }
 
-.tarjeta-producto img {
+.img-wrapper img {
     max-height: 100%;
     max-width: 100%;
     object-fit: contain;
 }
 
-/* Textos de las Tarjetas */
-.tarjeta-producto h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #0f172a;
-    margin-bottom: 0.6rem;
-    line-height: 1.3;
-}
-
-.tarjeta-producto p {
-    font-size: 0.95rem;
-    color: #475569;
-    margin-bottom: 1.5rem;
-    flex-grow: 1; /* Permite alinear los botones perfectamente al fondo */
-}
-
-/* Precios */
-.precio-block {
-    font-size: 1.6rem;
-    color: #0f172a;
+/* Textos */
+.tech-card h3 {
+    font-size: 1.2rem;
     font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+}
+
+.tech-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+/* Precio Estilo Consola */
+.tech-price {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 1.5rem;
+    color: var(--neon-cyan);
     margin-bottom: 1.5rem;
     display: flex;
-    align-items: baseline;
-    gap: 4px;
+    align-items: center;
 }
 
-.precio-block span {
-    font-size: 0.9rem;
-    font-weight: 400;
-    color: var(--text-muted);
+.tech-price::before {
+    content: '>>';
+    margin-right: 8px;
+    font-size: 1rem;
+    color: var(--neon-purple);
 }
 
-/* Botones Dinámicos */
-.btn-action {
-    display: block;
+/* Botón Neón - "Solicita tu terminal" */
+.btn-neon {
+    background-color: transparent;
+    color: var(--neon-cyan);
+    border: 1px solid var(--neon-cyan);
+    padding: 0.8rem 1rem;
     text-align: center;
     text-decoration: none;
-    padding: 0.9rem 1.5rem;
-    border-radius: 8px;
-    font-weight: 600;
+    font-family: 'Share Tech Mono', monospace;
     font-size: 1rem;
-    transition: background-color 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }
 
-/* Botón Tipo Terminal (Compra Directa) */
-.btn-terminal {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.btn-terminal:hover {
-    background-color: var(--primary-dark);
-}
-
-/* Botón Tipo Solicitud (Contacto/Gestión) */
-.btn-solicitud {
-    background-color: transparent;
-    color: var(--success-color);
-    border: 2px solid var(--success-color);
-}
-
-.btn-solicitud:hover {
-    background-color: var(--success-color);
-    color: white;
-}
-
-/* Footer */
-.main-footer {
-    text-align: center;
-    padding: 2.5rem 1.5rem;
-    background-color: #1e293b;
-    color: #94a3b8;
-    font-size: 0.9rem;
-    margin-top: 5rem;
-}
-
-/* Adaptación para pantallas de Celulares */
-@media (max-width: 768px) {
-    .main-header { padding: 3rem 1rem; }
-    .main-header h1 { font-size: 1.9rem; }
-    .content-wrapper { margin: 2rem auto; }
-    .products-grid { grid-template-columns: 1fr; }
+.btn-neon:hover {
+    background-color: var(--neon-cyan);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px var(--neon-cyan);
 }
