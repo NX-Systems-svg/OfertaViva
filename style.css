@@ -171,3 +171,18 @@ body {
     color: var(--bg-dark);
     box-shadow: 0 0 15px var(--neon-cyan);
 }
+
+/* Estilo específico para el botón principal del Header */
+.main-cta {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    background-color: rgba(0, 240, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+.main-cta:hover {
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
+    transform: scale(1.05);
+}
