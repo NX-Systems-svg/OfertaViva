@@ -1,62 +1,42 @@
-async function generarCatalogo() {
+async function compilarSistema() {
     try {
         const respuesta = await fetch('ofertas.json');
-        const productos = await respuesta.json();
+        const hardware = await respuesta.json();
         
-        // Seleccionamos los contenedores específicos definidos en el HTML
-        const contenedorTerminales = document.getElementById('contenedor-terminales');
-        const contenedorSolicitudes = document.getElementById('contenedor-solicitudes');
+        const grid = document.getElementById('tech-grid');
+        let htmlCompilado = '';
         
-        // Variables para almacenar las plantillas HTML que se autogenerarán
-        let htmlTerminales = '';
-        let htmlSolicitudes = '';
-        
-        // Bucle generador
-        productos.forEach(producto => {
-            
-            // Evaluamos el tipo de oferta para aplicar los estilos y textos correspondientes
-            if (producto.tipo === 'terminal') {
-                htmlTerminales += `
-                    <div class="tarjeta-producto">
-                        <div class="img-container">
-                            <img src="${producto.imagen}" alt="${producto.titulo}">
-                        </div>
-                        <h3>${producto.titulo}</h3>
-                        <p>${producto.descripcion}</p>
-                        <div class="precio-block">
-                            ${producto.precio} <span>MXN</span>
-                        </div>
-                        <a href="${producto.enlace}" target="_blank" rel="noopener noreferrer" class="btn-action btn-terminal">Adquirir con Descuento</a>
+        hardware.forEach(item => {
+            htmlCompilado += `
+                <div class="tech-card">
+                    <div class="img-wrapper">
+                        <img src="${item.imagen}" alt="${item.titulo}">
                     </div>
-                `;
-            } else if (producto.tipo === 'solicitud') {
-                htmlSolicitudes += `
-                    <div class="tarjeta-producto">
-                        <div class="img-container">
-                            <img src="${producto.imagen}" alt="${producto.titulo}">
-                        </div>
-                        <h3>${producto.titulo}</h3>
-                        <p>${producto.descripcion}</p>
-                        <div class="precio-block">
-                            ${producto.precio}
-                        </div>
-                        <a href="${producto.enlace}" target="_blank" rel="noopener noreferrer" class="btn-action btn-solicitud">Iniciar Solicitud</a>
+                    <h3>${item.titulo}</h3>
+                    <p>${item.descripcion}</p>
+                    
+                    <div class="tech-price">
+                        ${item.precio} <span style="font-size: 0.8rem; margin-left:5px; color: #8b9bb4;">MXN</span>
                     </div>
-                `;
-            }
+                    
+                    <a href="${item.enlace}" target="_blank" rel="noopener noreferrer" class="btn-neon">
+                        Solicita tu terminal
+                    </a>
+                </div>
+            `;
         });
         
-        // Inyección automática en el DOM
-        contenedorTerminales.innerHTML = htmlTerminales || '<p class="text-muted">No hay terminales disponibles en este momento.</p>';
-        contenedorSolicitudes.innerHTML = htmlSolicitudes || '<p class="text-muted">No hay servicios para solicitar en este momento.</p>';
+        grid.innerHTML = htmlCompilado;
         
     } catch (error) {
-        console.error('Error crítico al procesar el generador:', error);
-        const errorMsg = '<p style="color:red; text-align:center; width:100%;">Error al conectar con la base de datos de ofertas.</p>';
-        document.getElementById('contenedor-terminales').innerHTML = errorMsg;
-        document.getElementById('contenedor-solicitudes').innerHTML = errorMsg;
+        console.error('System Failure:', error);
+        document.getElementById('tech-grid').innerHTML = `
+            <div style="color: #ff003c; font-family: monospace; text-align: center; grid-column: 1/-1;">
+                [ERROR_CRÍTICO]: No se pudo establecer conexión con la base de datos de hardware.
+            </div>
+        `;
     }
 }
 
-// Inicializar el motor cuando la página web cargue por completo
-document.addEventListener('DOMContentLoaded', generarCatalogo);
+// Iniciar el renderizado al cargar el DOM
+document.addEventListener('DOMContentLoaded', compilarSistema);
