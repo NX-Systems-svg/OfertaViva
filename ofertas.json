@@ -2,19 +2,28 @@
   {
     "id": 1,
     "titulo": "Terminal Mercado Pago Point Smart",
-    "descripcion": "Ideal para negocios locales. Cobra con tarjeta al instante.",
+    "descripcion": "La más completa del mercado. Pantalla táctil, internet gratis ilimitado e impresión de tickets instantánea.",
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_824700-MLM54897230489_042023-O.webp",
     "precio": "$299 MXN",
     "enlace": "AQUI_TU_LINK_DE_REFERIDO_MERCADOPAGO",
-    "categoria": "cobros"
+    "tipo": "terminal"
   },
   {
     "id": 2,
-    "titulo": "Cable de Red Ethernet Cat 6 (15m)",
-    "descripcion": "Máxima velocidad para optimización de redes.",
+    "titulo": "Terminal Mercado Pago Point Air",
+    "descripcion": "Ultra compacta, batería de larga duración y pantalla a color. Ideal para repartidores y cobros rápidos.",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_605411-MLM50478144203_062022-O.webp",
+    "precio": "$199 MXN",
+    "enlace": "AQUI_TU_OTRO_LINK_DE_REFERIDO",
+    "tipo": "terminal"
+  },
+  {
+    "id": 3,
+    "titulo": "Servicio de Instalación y Cableado de Red",
+    "descripcion": "Optimiza la conectividad de tu negocio con infraestructura profesional de red local y configuración de routers.",
     "imagen": "https://http2.mlstatic.com/D_NQ_NP_840748-MLM31228516082_062019-O.webp",
-    "precio": "$180 MXN",
-    "enlace": "AQUI_TU_LINK_DE_AFILIADO_MERCADOLIBRE",
-    "categoria": "tecnologia"
+    "precio": "Cotización Gratis",
+    "enlace": "https://wa.me/TU_NUMERO_DE_WHATSAPP?text=Hola,%20quiero%20solicitar%20informacion%20de%20instalacion",
+    "tipo": "solicitud"
   }
 ]
