@@ -20,7 +20,7 @@ async function compilarSistema() {
                     </div>
                     
                     <a href="${item.enlace}" target="_blank" rel="noopener noreferrer" class="btn-neon">
-                        Solicita tu terminal
+                        Ir al producto
                     </a>
                 </div>
             `;
