@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "titulo": "Terminal Mercado Pago Point Smart",
+    "descripcion": "Ideal para negocios locales. Cobra con tarjeta al instante.",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_824700-MLM54897230489_042023-O.webp",
+    "precio": "$299 MXN",
+    "enlace": "AQUI_TU_LINK_DE_REFERIDO_MERCADOPAGO",
+    "categoria": "cobros"
+  },
+  {
+    "id": 2,
+    "titulo": "Cable de Red Ethernet Cat 6 (15m)",
+    "descripcion": "Máxima velocidad para optimización de redes.",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_840748-MLM31228516082_062019-O.webp",
+    "precio": "$180 MXN",
+    "enlace": "AQUI_TU_LINK_DE_AFILIADO_MERCADOLIBRE",
+    "categoria": "tecnologia"
+  }
+]
